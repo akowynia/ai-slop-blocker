@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="128" height="128">
+  <!-- Tarcza zewnętrzna -->
+  <path d="M50 8 L85 22 L85 55 C85 73 70 87 50 92 C30 87 15 73 15 55 L15 22 Z" fill="#ef4444" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Białe tło w środku -->
+  <circle cx="50" cy="52" r="24" fill="#ffffff"/>
+  <!-- Mózg AI (stylizowany) -->
+  <path d="M38 48 C36 45 40 38 46 40 C48 38 52 38 54 40 C60 38 64 45 62 48 C64 51 62 58 58 58 C56 60 52 60 50 58 C48 60 44 60 42 58 C38 57 36 51 38 48 Z" fill="#334155"/>
+  <!-- Przekreślenie tarczy (symbol blokady) -->
+  <line x1="33" y1="35" x2="67" y2="69" stroke="#ef4444" stroke-width="5" stroke-linecap="round"/>
+</svg>

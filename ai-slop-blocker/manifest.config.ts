@@ -1,0 +1,42 @@
+import { defineManifest } from '@crxjs/vite-plugin'
+
+export default defineManifest({
+  manifest_version: 3,
+  name: 'AI Slop Blocker',
+  version: '0.1.0',
+  description: 'Rozszerzenie wykrywające i blokujące treści typu AI Slop (generowane przez sztuczną inteligencję) na LinkedIn i innych portalach.',
+  permissions: ['storage', 'activeTab', 'alarms'],
+  options_page: 'src/options/options.html',
+  action: {
+    default_popup: 'src/popup/index.html',
+    default_icon: {
+      '16': 'icons/icon16.png',
+      '32': 'icons/icon32.png',
+      '48': 'icons/icon48.png',
+      '128': 'icons/icon128.png'
+    }
+  },
+  background: {
+    service_worker: 'src/background/index.ts',
+    type: 'module'
+  },
+  content_scripts: [
+    {
+      matches: ['<all_urls>'],
+      js: ['src/content/index.ts'],
+      run_at: 'document_end'
+    },
+    {
+      matches: ['<all_urls>'],
+      js: ['src/content/spaDetector.ts'],
+      run_at: 'document_start',
+      world: 'MAIN'
+    }
+  ],
+  icons: {
+    '16': 'icons/icon16.png',
+    '32': 'icons/icon32.png',
+    '48': 'icons/icon48.png',
+    '128': 'icons/icon128.png'
+  }
+})
